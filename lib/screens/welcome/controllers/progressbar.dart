@@ -24,7 +24,7 @@ class ProgressBar extends StatelessWidget {
         child: GetBuilder<QuestionController>(
             init: QuestionController(),
             builder: (controller) {
-              print(controller.animation.value);
+              // print(controller.animation.value);
               return Stack(
                 children: [
                   LayoutBuilder(
@@ -44,7 +44,7 @@ class ProgressBar extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          controller.animation.value.toInt().toString(),
+                          "${(controller.animation.value * 60).round()}sec",
                           style: TextStyle(fontSize: 15),
                         ),
                         WebsafeSvg.asset('assets/icons/clock.svg'),
